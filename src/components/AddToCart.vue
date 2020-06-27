@@ -1,0 +1,45 @@
+<template>
+    <div class="addtocart">
+        <button class="btn btn-info" @click="addToCart">Add to Cart</button>
+
+    </div>
+</template>
+
+<script>
+    import jQuery from "jquery";
+
+    export default {
+        name: "AddToCart",
+        props: {
+            name: String,
+            price: String,
+            image: String,
+            pId: String
+        },
+        data() {
+            return {
+                item: {
+                    productName: this.name,
+                    productImage: this.image,
+                    productPrice: this.price,
+                    productId: this.pId,
+                    productQuantity: 1,
+                }
+
+            }
+        },
+
+        methods: {
+            addToCart() {
+              jQuery('#miniCart').modal('show');
+                this.$store.commit('addToCart', this.item)
+            }
+
+        }
+    };
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
+
+</style>

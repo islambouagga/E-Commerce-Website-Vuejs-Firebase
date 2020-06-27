@@ -54,7 +54,7 @@
 </template>
 
 <script>
-  import {fb} from '../firebase';
+  import {fb,db} from '../firebase';
   import jQuery from "jquery";
 export default {
   name: "Login",
@@ -74,8 +74,21 @@ export default {
       fb.auth().createUserWithEmailAndPassword(this.email, this.password)
               .then( (user) => {
                 jQuery('#login').modal('hide')
+                // Add a new document in collection "cities"
+                db.collection("profiles").doc(user.user.uid).set({
+                  name : this.name,
+                  phone:null,
+                  address:null,
+                  postcode:null
+                })
+                        .then(function() {
+                          console.log("Document successfully written!");
+                        })
+                        .catch(function(error) {
+                          console.error("Error writing document: ", error);
+                        });
+
                 this.$router.replace('admin')
-                console.log(user)
               })
               .catch(function(error) {
                 // Handle Errors here.

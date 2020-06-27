@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Admin from "../views/Admin.vue";
 import OverView from "../views/OverView";
 import Products from "../views/Products";
+import Profile from "../views/Profile";
 import Orders from "../views/Orders";
 import {fb} from  '../firebase';
 
@@ -32,12 +33,26 @@ const routes = [
         component: Products,
       },
       {
+        path: "profile",
+        name: "Profile",
+        component: Profile,
+      },
+      {
         path: "orders",
         name: "Orders",
         component: Orders,
       }
     ]
   },
+  {
+    path: "/checkout",
+    name: "Checkout",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Checkout.vue")
+  } ,
   {
     path: "/about",
     name: "About",

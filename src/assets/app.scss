@@ -22,6 +22,27 @@ body{
   margin-top: 3rem;
 }
 
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #00bfa6;
+}
+
+.btn-info {
+  color: #fff;
+  background-color: #00bfa6;
+  border-color: #00bfa6;
+}
+a {
+  color: #00bfa6;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.card-img, .card-img-top, .card-img-bottom {
+  flex-shrink: 0;
+  width: 250px;
+}
 @media (min-width: 992px){
 
   .modal-lg, .modal-xl {
