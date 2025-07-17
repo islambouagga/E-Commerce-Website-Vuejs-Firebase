@@ -29,7 +29,8 @@ Vue.use(VueFirestore, {
 Vue.component('NavBar',require('./components/NavBar.vue').default);
 Vue.component('add-to-cart',require('./components/AddToCart.vue').default);
 Vue.component('mini-cart',require('./components/MiniCart.vue').default);
-Vue.component('productslist',require('./sections/productList.vue').default);
+// Vue.component('ProductList ',require('./sections/productList.vue').default);
+Vue.component('ProductList', require('./sections/ProductList.vue').default);
 Vue.config.productionTip = false;
 
 let app ='';

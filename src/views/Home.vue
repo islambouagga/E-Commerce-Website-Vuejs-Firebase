@@ -2,7 +2,7 @@
   <div class="home">
     <NavBar></NavBar>
     <Hero></Hero>
-    <productslist></productslist>
+    <ProductsList ></ProductsList >
     <div class="container h-100">
       <div class="row p-5 h-100 justify-content-center align-items-center">
         <div class="col-md-6">
@@ -28,14 +28,15 @@
   import NavBar from "../components/NavBar";
   import Login from "../components/Login";
   import Hero from "../components/Hero";
-  import productslist from  "../sections/productList"
+  // import productslist from  "../sections/productList";
+  import ProductsList from "../sections/ProductList.vue";
   // import Products from "../sections/products";
 // @ is an alias to /src
 
 export default {
   name: "Home",
   components: {
-    NavBar,Hero,Login,productslist
+    NavBar,Hero,Login,ProductsList
   }
 };
 </script>
